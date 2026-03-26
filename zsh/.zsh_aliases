@@ -6,6 +6,9 @@ if command -v eza &>/dev/null; then
   alias tree='eza --tree --icons --level=2'
 fi
 
+# Open files/folders
+alias open='xdg-open'
+
 # Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
