@@ -1,0 +1,41 @@
+# eza (ls replacement)
+if command -v eza &>/dev/null; then
+  alias ls='eza --icons --group-directories-first'
+  alias ll='eza -l --icons --group-directories-first --git'
+  alias la='eza -la --icons --group-directories-first --git'
+  alias tree='eza --tree --icons --level=2'
+fi
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Shell
+alias reload='source ~/.zshrc'
+
+# Docker
+alias dev='docker exec -it -w "$PWD" wint-sandbox zsh'
+
+# Typo fixes
+alias gemeni='gemini'
+
+# Custom functions
+sendshot() {
+    local remote="${1:?Usage: sendshot <remote> [file]}"
+    local file="${2:-$(ls -t /home/adam/Pictures/Screenshots/ | head -1)}"
+    echo "Sending: $file → $remote"
+    scp "/home/adam/Pictures/Screenshots/$file" "$remote:~/Screenshots/"
+}
+
+sendfile() {
+    local remote="${1:?Usage: sendfile <remote> [file]}"
+    local file="${2:-$(ls -t /home/adam/SendFiles/ | head -1)}"
+    echo "Sending: $file → $remote"
+    scp "/home/adam/SendFiles/$file" "$remote:~/ReceivedFiles/"
+}
+
+claude() {
+  if ~/.local/bin/claude-repo-guard.sh; then
+    command claude "$@"
+  fi
+}

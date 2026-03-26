@@ -1,0 +1,19 @@
+[user]
+	name = Adam Gärdelöv
+	email = adam.gardelov@wint.se
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[merge]
+	commit = no-edit
+[coderabbit]
+	machineId = cli/13e5ec390e4a4ca98e80e2357087e825
+[core]
+	autocrlf = input
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[push]
+	autoSetupRemote = true

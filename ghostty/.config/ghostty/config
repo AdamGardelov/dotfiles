@@ -1,0 +1,13 @@
+# Shell
+command = /usr/bin/zsh
+
+# Font
+font-family = monospace
+font-size = 12
+
+# Window
+window-padding-x = 4
+window-padding-y = 4
+
+# Theme (run `ghostty +list-themes` to see options)
+# theme = catppuccin-mocha
