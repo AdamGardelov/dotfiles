@@ -10,6 +10,7 @@ window-padding-x = 4
 window-padding-y = 4
 
 # Keybinds
+keybind = ctrl+t=unbind
 keybind = ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
 
