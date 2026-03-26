@@ -9,5 +9,9 @@ font-size = 12
 window-padding-x = 4
 window-padding-y = 4
 
+# Keybinds
+keybind = ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
+
 # Theme (run `ghostty +list-themes` to see options)
 # theme = catppuccin-mocha
