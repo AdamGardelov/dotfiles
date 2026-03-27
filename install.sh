@@ -8,11 +8,13 @@ green() { printf '\033[0;32m%s\033[0m\n' "$*"; }
 yellow() { printf '\033[0;33m%s\033[0m\n' "$*"; }
 red() { printf '\033[0;31m%s\033[0m\n' "$*"; }
 
-# Check for stow
-if ! command -v stow &>/dev/null; then
-  echo "stow not found. Installing..."
-  sudo apt-get update && sudo apt-get install -y stow
-fi
+# Ensure essential tools are present
+for tool in stow curl; do
+  if ! command -v "$tool" &>/dev/null; then
+    echo "$tool not found. Installing..."
+    sudo apt-get update && sudo apt-get install -y "$tool"
+  fi
+done
 
 # Optionally install missing tools
 read -rp "Install missing tools via apt (eza, fzf, tmux, zoxide)? [y/N] " answer
