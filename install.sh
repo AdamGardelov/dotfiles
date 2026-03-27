@@ -21,6 +21,12 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   sudo apt-get install -y eza fzf tmux zoxide 2>/dev/null || true
 fi
 
+# Install oh-my-zsh if missing
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  green "Installing oh-my-zsh..."
+  RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 # Install zsh-autosuggestions if missing
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
