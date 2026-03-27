@@ -18,6 +18,8 @@ alias reload='source ~/.zshrc'
 
 # Docker
 alias dev='docker exec -it -w "$PWD" wint-sandbox zsh'
+alias dstart='sudo systemctl start docker'
+alias dstop='sudo systemctl stop docker'
 
 # Typo fixes
 alias gemeni='gemini'
