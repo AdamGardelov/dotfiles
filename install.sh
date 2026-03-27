@@ -24,7 +24,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 fi
 
 # Install oh-my-zsh if missing
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
+if [ ! -f "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
   green "Installing oh-my-zsh..."
   RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
